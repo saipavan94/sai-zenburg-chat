@@ -49,6 +49,7 @@ app.controller('Ctrl', function($scope, socket,$state,$mdToast,$window){
       position: 'top right'
     });
     console.log(data);
+    if(data.ArrayUpdate){
     $scope.$apply(function(){
       if (data.msgArray!=undefined) {
         $scope.messages=data.msgArray;
@@ -56,6 +57,7 @@ app.controller('Ctrl', function($scope, socket,$state,$mdToast,$window){
         $scope.messages=[];
       }
     });
+  }
     $window.scrollTo(0,document.documentElement.scrollHeight);
 
   });
