@@ -62,7 +62,7 @@ io.on('connection',function(socket){
         "ArrayUpdate":true
     }
     socket.emit('notification',initialData);
-    socket.broadcast.to(data.channel).emit('notification',data.name+' connected');
+      socket.broadcast.to(data.channel).emit('notification',{'notification':data.name+' connected'});
 
   });
   socket.on('msg',function(data){
